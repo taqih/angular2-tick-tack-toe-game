@@ -1,0 +1,36 @@
+<div class="container">
+
+<div class="row">
+
+	<div class="col-md-8">
+		<div class="game-area">
+			<md-grid-list class="tick-tack-grid" cols="3">
+				<md-grid-tile *ngFor="let block of gs.blocks; let i = index; trackBy: trackByFn" (click)="playerClick(i)"><i [class]="block.symbol == 'done' ? 'material-icons tick' : 'material-icons cross'">{{ block.symbol }}</i></md-grid-tile>
+			</md-grid-list>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<h2>Score:</h2>
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td>You:</td>
+					<td>{{ gs.players[0].score }}</td>
+				</tr>
+
+				<tr>
+					<td>Computer:</td>
+					<td>{{ gs.players[1].score }}</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<a class="pull-right text-right" class="btn btn-danger" (click)="resetGame($event)" href="#">Reset Game</a>
+		<a class="pull-right text-right" class="btn btn-danger" (click)="newGame($event)" href="#">New Game</a>
+	</div>
+
+</div>
+	
+
+</div>
