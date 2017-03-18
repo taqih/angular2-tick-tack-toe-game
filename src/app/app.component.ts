@@ -19,6 +19,7 @@ export class AppComponent {
 	}
 
 	newGame() {
+		this.gs.freeBlocksRemaining = 9;
 		this.gs.initBlocks();
 		this.lock = false;
 		this.gs.turn = 0;
@@ -35,6 +36,19 @@ export class AppComponent {
 		}
 
 		this.gs.freeBlocksRemaining -= 1; // Reduce no. of free blocks after each selection
+
+		console.log("Block Remaining = " + this.gs.freeBlocksRemaining);
+
+		if( this.gs.freeBlocksRemaining <= 0 ) {
+			this.lock = true;
+			this.snackBar.open("Game:", "Draw", {
+		      duration: 4000,
+		    });
+			this.newGame();
+			return;
+		}
+
+
 		this.gs.blocks[i].free = false;
 
 		if( this.gs.turn == 0 ) { // Player1 Turn
@@ -48,6 +62,8 @@ export class AppComponent {
 
 		if( complete == false ) {
 			this.changeTurn();	
+			return;
+			
 		} else {
 			this.lock = true;
 			this.gs.players[this.gs.turn].score += 1;
@@ -56,6 +72,7 @@ export class AppComponent {
 		    });
 
 		    this.newGame();
+		    return;
 		}
 		
 	}
@@ -63,7 +80,7 @@ export class AppComponent {
 
 	botTurn() {
 
-		if( this.gs.freeBlocksRemaining == 0 ) {
+		if( this.gs.freeBlocksRemaining <= 0 ) {
 			return;
 		}
 
