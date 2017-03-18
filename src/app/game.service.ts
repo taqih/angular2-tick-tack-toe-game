@@ -8,6 +8,7 @@ export class GameService {
 	players = []
 	totalPlayers: number = 2;
 	turn: number = 0; // By Default First Player turn is First
+	draw: number = 0;
 
 	blocks = [];
 	freeBlocksRemaining = 9;
@@ -26,24 +27,8 @@ export class GameService {
 			block.free = true;
 			block.value = "";
 			block.symbol = "";
-
-			if( i <= 3 ) {
-				block.spaceTop = false;	
-			}
-
-			if( i > 6 ) {
-				block.spaceBottom = false;	
-			}
-
-			if( i == 1 || i == 4 || i == 7 ) {
-				block.spaceLeft = false;	
-			}
-			
-			if( i == 3 || i == 6 || i == 9 ) {
-				block.spaceRight = false;
-			}
-			
-			this.blocks.push(block)	
+	
+			this.blocks.push(block);
 		}
 	}
 

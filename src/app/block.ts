@@ -1,9 +1,6 @@
 export class Block {
 	free: boolean = true;
-	spaceTop: boolean = true;
-	spaceBottom: boolean = true;
-	spaceLeft: boolean = true;
-	spaceRight: boolean = true;
+
 	value: string = ""; // cross | tick
 	symbol: string = ""; // cross | tick
 

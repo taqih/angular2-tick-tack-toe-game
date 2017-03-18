@@ -37,9 +37,9 @@ export class AppComponent {
 
 		this.gs.freeBlocksRemaining -= 1; // Reduce no. of free blocks after each selection
 
-		console.log("Block Remaining = " + this.gs.freeBlocksRemaining);
-
 		if( this.gs.freeBlocksRemaining <= 0 ) {
+
+			this.gs.draw += 1;
 			this.lock = true;
 			this.snackBar.open("Game:", "Draw", {
 		      duration: 4000,
@@ -85,7 +85,6 @@ export class AppComponent {
 		}
 
 		var bot_selected = this.gs.figureBotMove()-1;
-		console.log("Bot selected: " +bot_selected);
 		
 		if( this.gs.blocks[bot_selected].free == true ) {
 			this.playerClick(bot_selected);	
