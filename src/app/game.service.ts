@@ -6,7 +6,6 @@ import { Block } from './block';
 export class GameService {
 
 	players = []
-	totalPlayers: number = 2;
 	turn: number = 0; // By Default First Player turn is First
 	draw: number = 0;
 
@@ -43,10 +42,6 @@ export class GameService {
 
 		this.players.push(player1);
 		this.players.push(player2);
-	}
-
-	setTotalPlayers(players) {
-		this.totalPlayers = players;
 	}
 
 	changeTurn() {
