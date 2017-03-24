@@ -4,6 +4,7 @@ Angular2 based Simple Tick Tac toe game developed with the help of ng-cli. This 
 https://taqih.com/how-to-create-simple-tic-tac-toe-game-using-angular2-and-angular-materials-with-the-help-of-angular-cli-ng-cli/316
 
 Live demo can be found at: http://taqih.com/tutorials/angular2/tick-tac-toe/index.html
+Video Tutorial: https://www.youtube.com/watch?v=mhs9ihqxQj0
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
